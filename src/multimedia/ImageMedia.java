@@ -13,7 +13,7 @@ public class ImageMedia extends MultimediaItem implements Brightness {
 
     @Override
     public void play() {
-        System.err.println("Errore, l'elemento multimediale è una immaggine, invoca il metodo show!");
+        show();
 
     }
 

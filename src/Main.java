@@ -6,19 +6,26 @@ import multimedia.VideoMedia;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
         MultimediaItem[] mediaItems = new MultimediaItem[5];
         Scanner userInput = new Scanner(System.in);
 
-        System.out.println("Che tipo di elemento vuoi creare? audio, video o immagine?");
-        String chosenOption = userInput.nextLine();
-        createElement(chosenOption, mediaItems);
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Che tipo di elemento vuoi creare? audio, video o immagine?");
+            String chosenOption = userInput.nextLine();
+            createElement(chosenOption, mediaItems, i);
+        }
+
+        System.out.println("Quale elemento vuoi riprodurre? Scegli un valore da 1 a 5, scegli 0 se vuoi uscire");
+        int chosenMedia = Integer.parseInt(userInput.nextLine());
+        mediaItems[chosenMedia].play();
 
 
     }
 
 
-    public static void createElement(String value, MultimediaItem[] mediaItems) {
+    public static void createElement(String value, MultimediaItem[] mediaItems, int i) {
         Scanner userInput = new Scanner(System.in);
 
         switch (value) {
@@ -30,7 +37,7 @@ public class Main {
                 System.out.println("Ora setta il volume");
                 int volume = Integer.parseInt(userInput.nextLine());
                 AudioMedia audio = new AudioMedia(title, duration, volume);
-                mediaItems[0] = audio;
+                mediaItems[i] = audio;
                 break;
             }
             case "video": {
@@ -43,7 +50,7 @@ public class Main {
                 System.out.println("Ora setta la luminosità");
                 int brightness = Integer.parseInt(userInput.nextLine());
                 VideoMedia video = new VideoMedia(title, duration, volume, brightness);
-                mediaItems[0] = video;
+                mediaItems[i] = video;
                 break;
             }
             case "immagine": {
@@ -54,7 +61,7 @@ public class Main {
                 System.out.println("Ora setta la luminosità");
                 int brightness = Integer.parseInt(userInput.nextLine());
                 ImageMedia imaage = new ImageMedia(title, duration, brightness);
-                mediaItems[0] = imaage;
+                mediaItems[i] = imaage;
                 break;
             }
             default:
