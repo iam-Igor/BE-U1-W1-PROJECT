@@ -12,7 +12,7 @@ public class Main {
         MultimediaItem[] mediaItems = new MultimediaItem[5];
         Scanner userInput = new Scanner(System.in);
 
-//        in questo blocco for ciclo tante volte quanto è la condizione per creare nuovi alementi, in questo caso 5 volte.
+//        in questo blocco for ciclo tante volte quanto è la condizione per creare nuovi alementi
         for (int i = 0; i < 5; i++) {
             System.out.println("Che tipo di elemento vuoi creare? audio, video o immagine?");
             String chosenOption = userInput.nextLine();
@@ -50,6 +50,8 @@ public class Main {
                 int volume = Integer.parseInt(userInput.nextLine());
                 AudioMedia audio = new AudioMedia(title, duration, volume);
                 mediaItems[i] = audio;
+                System.out.println("hai creato l'audio: " + audio.getTitle() + audio.getDuration());
+
                 break;
             }
             case "video": {
@@ -63,6 +65,8 @@ public class Main {
                 int brightness = Integer.parseInt(userInput.nextLine());
                 VideoMedia video = new VideoMedia(title, duration, volume, brightness);
                 mediaItems[i] = video;
+                System.out.println("hai creato il video : " + video.getTitle() + video.getDuration());
+
                 break;
             }
             case "immagine": {
@@ -72,8 +76,10 @@ public class Main {
                 int duration = Integer.parseInt(userInput.nextLine());
                 System.out.println("Ora setta la luminosità");
                 int brightness = Integer.parseInt(userInput.nextLine());
-                ImageMedia imaage = new ImageMedia(title, duration, brightness);
-                mediaItems[i] = imaage;
+                ImageMedia image = new ImageMedia(title, duration, brightness);
+                mediaItems[i] = image;
+                System.out.println("hai creato l'immagine: " + image.getTitle() + image.getDuration());
+
                 break;
             }
             default:
