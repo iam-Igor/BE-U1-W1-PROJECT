@@ -26,6 +26,7 @@ public class Main {
 //        il numero scelto e come secondo parametro l'array di media appena popolato.
 
         System.out.println("Quale elemento vuoi riprodurre? Scegli un valore da 1 a 5, scegli 0 se vuoi uscire");
+      
         int chosenMedia = Integer.parseInt(userInput.nextLine());
         showItem(chosenMedia, mediaItems);
 
@@ -83,7 +84,7 @@ public class Main {
                 break;
             }
             default:
-                System.out.println("Errore nell'inserimento dei dati, riprova");
+                System.err.println("Errore nell'inserimento dei dati, riprova");
         }
 
 
