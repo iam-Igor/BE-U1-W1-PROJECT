@@ -1,7 +1,12 @@
+import multimedia.AudioMedia;
+
 public class Main {
     public static void main(String[] args) {
 
-        System.out.printf("Hello and welcome!");
+
+        AudioMedia song1 = new AudioMedia("titolo", 5, 10);
+        song1.play();
+        System.out.println();
 
 
     }

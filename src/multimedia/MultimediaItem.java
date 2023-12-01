@@ -1,6 +1,6 @@
 package multimedia;
 
-abstract class MultimediaItem {
+public abstract class MultimediaItem {
 
     private String title;
     private int duration;
@@ -10,10 +10,6 @@ abstract class MultimediaItem {
         this.title = title;
         this.duration = duration;
 
-    }
-
-    public MultimediaItem(String title) {
-        this.title = title;
     }
 
 
