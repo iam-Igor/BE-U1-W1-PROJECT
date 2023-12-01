@@ -18,7 +18,8 @@ public class ImageMedia extends MultimediaItem implements Brightness {
 
     }
 
-    //    il metodo show inizializza una stringa che simboleggia la lumionosità
+    //    il metodo show inizializza una stringa che simboleggia la lumionosità, dopodichè con il metodo repeat
+//    concatenerà la stringa tante volte quanto il suo parametro.
     public void show() {
         String symbol = "*";
         for (int i = 0; i < getDuration(); i++) {
