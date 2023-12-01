@@ -46,10 +46,14 @@ public class VideoMedia extends MultimediaItem implements Brightness, Volume {
 
     @Override
     public void play() {
+//        inizializzo due stringhe che simboleggano volume e luminosità
         String symbol = "!";
         String symbol2 = "*";
         for (int i = 0; i < getDuration(); i++) {
             System.out.println(getTitle());
+            
+            // con il metodo repeat concateno la stringa "symbol" tante volte quanto è il suo parametro.
+
             System.out.println("Volume: " + symbol.repeat(volume));
             System.out.println("Brightness: " + symbol2.repeat(brightness));
 
