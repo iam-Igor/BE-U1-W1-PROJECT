@@ -2,8 +2,8 @@ package interfaces;
 
 public interface Volume {
 
-    public void volumeUp();
+    public int volumeUp();
 
-    public void volumeDown();
+    public int volumeDown();
 
 }

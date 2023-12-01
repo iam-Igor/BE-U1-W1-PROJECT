@@ -1,7 +1,7 @@
 package interfaces;
 
 public interface Brightness {
-    public void brightnessUp();
+    public int brightnessUp();
 
-    public void brightnessDown();
+    public int brightnessDown();
 }

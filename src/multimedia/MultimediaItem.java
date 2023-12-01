@@ -24,4 +24,5 @@ public abstract class MultimediaItem {
 
     public abstract void play();
 
+
 }

@@ -21,14 +21,15 @@ public class AudioMedia extends MultimediaItem implements Volume {
     }
 
     @Override
-    public void volumeUp() {
+    public int volumeUp() {
         if (volume > 0) {
-            System.out.println(volume++);
+            volume++;
         }
+        return volume;
     }
 
     @Override
-    public void volumeDown() {
-        System.out.println(volume--);
+    public int volumeDown() {
+        return volume--;
     }
 }

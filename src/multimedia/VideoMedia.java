@@ -17,36 +17,43 @@ public class VideoMedia extends MultimediaItem implements Brightness, Volume {
     }
 
     @Override
-    public void brightnessUp() {
+    public int brightnessUp() {
 
         if (brightness > 0) {
-            System.out.println(brightness++);
+            brightness++;
         }
+        return brightness;
 
     }
 
     @Override
-    public void brightnessDown() {
-        System.out.println(brightness--);
-
+    public int brightnessDown() {
+        return brightness--;
     }
 
     @Override
-    public void volumeUp() {
+    public int volumeUp() {
         if (volume > 0) {
-            System.out.println(volume++);
+            volume++;
         }
+        return volume;
     }
 
     @Override
-    public void volumeDown() {
-        System.out.println(volume--);
+    public int volumeDown() {
+        return volume--;
     }
 
     @Override
     public void play() {
+        String symbol = "!";
+        String symbol2 = "*";
         for (int i = 0; i < getDuration(); i++) {
             System.out.println(getTitle());
+            System.out.println("Volume: " + symbol.repeat(volume));
+            System.out.println("Brightness: " + symbol2.repeat(brightness));
+
+
         }
 
     }
