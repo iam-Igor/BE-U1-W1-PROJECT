@@ -1,26 +1,65 @@
 import multimedia.AudioMedia;
 import multimedia.ImageMedia;
+import multimedia.MultimediaItem;
 import multimedia.VideoMedia;
+
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        MultimediaItem[] mediaItems = new MultimediaItem[5];
+        Scanner userInput = new Scanner(System.in);
+
+        System.out.println("Che tipo di elemento vuoi creare? audio, video o immagine?");
+        String chosenOption = userInput.nextLine();
+        createElement(chosenOption, mediaItems);
 
 
-        AudioMedia song1 = new AudioMedia("titolo", 2, 2);
-        song1.volumeDown();
-        song1.volumeUp();
-        song1.play();
+    }
 
 
-        VideoMedia video1 = new VideoMedia("video", 2, 2, 3);
-        video1.volumeDown();
-        video1.brightnessDown();
-        video1.play();
+    public static void createElement(String value, MultimediaItem[] mediaItems) {
+        Scanner userInput = new Scanner(System.in);
 
-
-        ImageMedia image1 = new ImageMedia("image", 5, 2);
-        image1.brightnessDown();
-        image1.show();
+        switch (value) {
+            case "audio": {
+                System.out.println("hai scelto audio, Inserisci il titolo");
+                String title = userInput.nextLine();
+                System.out.println("Inserisci la durata");
+                int duration = Integer.parseInt(userInput.nextLine());
+                System.out.println("Ora setta il volume");
+                int volume = Integer.parseInt(userInput.nextLine());
+                AudioMedia audio = new AudioMedia(title, duration, volume);
+                mediaItems[0] = audio;
+                break;
+            }
+            case "video": {
+                System.out.println("Hai scelto video, Inserisci il titolo");
+                String title = userInput.nextLine();
+                System.out.println("Inserisci la durata");
+                int duration = Integer.parseInt(userInput.nextLine());
+                System.out.println("Ora setta il volume");
+                int volume = Integer.parseInt(userInput.nextLine());
+                System.out.println("Ora setta la luminosità");
+                int brightness = Integer.parseInt(userInput.nextLine());
+                VideoMedia video = new VideoMedia(title, duration, volume, brightness);
+                mediaItems[0] = video;
+                break;
+            }
+            case "immagine": {
+                System.out.println("Hai scelto immagine, Inserisci il titolo");
+                String title = userInput.nextLine();
+                System.out.println("Inserisci la durata");
+                int duration = Integer.parseInt(userInput.nextLine());
+                System.out.println("Ora setta la luminosità");
+                int brightness = Integer.parseInt(userInput.nextLine());
+                ImageMedia imaage = new ImageMedia(title, duration, brightness);
+                mediaItems[0] = imaage;
+                break;
+            }
+            default:
+                System.out.println("Errore nell'inserimento dei dati, riprova");
+        }
 
     }
 }
